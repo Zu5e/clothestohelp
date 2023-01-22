@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!--Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <title>ClothesToHelp</title>
+    <link rel="icon" type="image/x-icon" href="/kleiderspende.png">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xs navbar-expand-sm navbar-expand-md navbar-expand-lg navbar-expand-xl navbar-expand-xxl bg-primary-subtle">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                <img src="kleiderspende.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                ClothesToHelp
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Abgabe
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="erklärung.html">Erklärung</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="geschäftsstelle.html">Geschäftsstelle</a></li>
+                            <li><a class="dropdown-item" href="sammelfahrzeug.html">Sammelfahrzeug</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="anfahrt.html">Anfahrt</a>
+                    </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+</body>
+    <main>
+        <div class="container-fluid">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="kleider_carousel_1.jpg" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                    <img src="kleider_carousel_2.jpg" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                    <img src="kleider_carousel_3.jpg" class="d-block w-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+        <br>
+        <h2>Formular für Ihre Kleiderspende</h2>
+        <a>Sie können Ihre Kleiderspende an ein Kriesengebiet Ihrer Wahl spenden !</a>
+        <br>
+        <a>Bitte geben Sie an ob Sie die Spende in der Geschäfftsstelle abgeben wollen oder ob wir ein Sammelfahrzeug schicken sollen.</a>
+        <h2></h2>
+            <form class="row g-3">
+                <div class="col-6">
+                    <label for="inputVorname" class="form-label">Vorname</label>
+                    <input type="text" class="form-control" id="inputVorname">
+                </div>
+                <div class="col-6">
+                    <label for="inputNachname" class="form-label">Nachname</label>
+                    <input type="text" class="form-control" id="inputNachname">
+                </div>
+                <div class="col-8">
+                  <label for="inputStraße" class="form-label">Straße</label>
+                  <input type="text" class="form-control" id="inputStraße">
+                </div>
+                <div class="col-4">
+                    <label for="inputNr" class="form-label">Nr.</label>
+                    <input type="text" class="form-control" id="inputNr">
+                  </div>
+                <div class="col-md-8">
+                  <label for="inputStadt" class="form-label">Stadt</label>
+                  <input type="text" class="form-control" id="inputStadt">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputPLZ" class="form-label">Postleitzahl</label>
+                  <input type="text" class="form-control" id="inputPLZ">
+                </div>
+                <div class="col-12">
+                    <label for="inputEmail" class="form-label">E-Mail</label>
+                    <input type="email" class="form-control" id="inputEmail">
+                </div>
+                <div class="col-6">
+                    <label for="inputKriesengebiet" class="form-label">Kriesengebiet</label>
+                    <select id="inputKriesengebiet" class="form-select">
+                      <option selected>Auswählen...</option>
+                      <option>A</option>
+                      <option>B</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="inputAbgabe" class="form-label">Abgabe</label>
+                    <select id="inputAbgabe" class="form-select">
+                      <option selected>Auswählen...</option>
+                      <option>Geschäftsstelle</option>
+                      <option>Sammelfahrzeug</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-outline-primary">Abschicken</button>
+                </div>
+              </form>
+        </div> 
+    </main>
+</html>
