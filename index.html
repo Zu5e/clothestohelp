@@ -50,60 +50,76 @@
             </div>
         </nav>
     </header>
-</body>
     <main>
-        <div class="container-fluid">
-            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="kleider_carousel_1.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="3000">
-                    <img src="kleider_carousel_2.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="3000">
-                    <img src="kleider_carousel_3.jpg" class="d-block w-100">
-                    </div>
+        <div class="container-fluid text-center">
+        <h1></h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100 border-info">
+                <img src="kleider_img_3.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Wähle ein Land</h5>
+                <p class="card-text">Du hast die Kontrolle, deine Kleiderspende kommt dort an wo sie am meisten gebraucht wird. Wähle im Spendenformular ganz einfach ein Kriesengebiet deiner Wahl.</p>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 border-info">
+                <img src="kleider_img_1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Abgabe in der Geschäftsstelle</h5>
+                <p class="card-text">Du kannst deine Spende während unseren Öffnungszeiten direkt in der Geschäfftsstelle abgeben. Wähle im Spendenformular als Abgabeort die Geschäfftsstelle aus.</p>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 border-info">
+                <img src="kleider_img_4.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Abholung mit dem Sammelfahrzeug</h5>
+                <p class="card-text">Lass deine Spende ganz entspannt von einem unserer Sammelfahrzeuge bei dir Zuhause abholen. Wähle dazu im Spendenformular die Abholung mit einem Sammelfahrzeug aus.</p>
+                </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        </div>
+        <div class="container-fluid text-center">
         <br>
-        <h2>Formular für Ihre Kleiderspende</h2>
+        <h2>Spendenformular</h2>
         <a>Sie können Ihre Kleiderspende an ein Kriesengebiet Ihrer Wahl spenden !</a>
         <br>
         <a>Bitte geben Sie an ob Sie die Spende in der Geschäfftsstelle abgeben wollen oder ob wir ein Sammelfahrzeug schicken sollen.</a>
         <h2></h2>
-            <form class="row g-3">
-                <div class="col-6">
+            <form class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
                     <label for="inputVorname" class="form-label">Vorname</label>
                     <input type="text" class="form-control" id="inputVorname">
                 </div>
-                <div class="col-6">
+                <div class="col">
                     <label for="inputNachname" class="form-label">Nachname</label>
                     <input type="text" class="form-control" id="inputNachname">
                 </div>
-                <div class="col-8">
+                <div class="col">
                   <label for="inputStraße" class="form-label">Straße</label>
                   <input type="text" class="form-control" id="inputStraße">
                 </div>
-                <div class="col-4">
+                <div class="col">
                     <label for="inputNr" class="form-label">Nr.</label>
                     <input type="text" class="form-control" id="inputNr">
                   </div>
-                <div class="col-md-8">
+                <div class="col">
                   <label for="inputStadt" class="form-label">Stadt</label>
                   <input type="text" class="form-control" id="inputStadt">
                 </div>
-                <div class="col-md-4">
+                <div class="col">
                   <label for="inputPLZ" class="form-label">Postleitzahl</label>
                   <input type="text" class="form-control" id="inputPLZ">
                 </div>
-                <div class="col-12">
+                <div class="col">
                     <label for="inputEmail" class="form-label">E-Mail</label>
                     <input type="email" class="form-control" id="inputEmail">
                 </div>
-                <div class="col-6">
+                <div class="col">
                     <label for="inputKriesengebiet" class="form-label">Kriesengebiet</label>
                     <select id="inputKriesengebiet" class="form-select">
                       <option selected>Auswählen...</option>
@@ -111,7 +127,7 @@
                       <option>B</option>
                     </select>
                 </div>
-                <div class="col-6">
+                <div class="col">
                     <label for="inputAbgabe" class="form-label">Abgabe</label>
                     <select id="inputAbgabe" class="form-select">
                       <option selected>Auswählen...</option>
@@ -119,10 +135,11 @@
                       <option>Sammelfahrzeug</option>
                     </select>
                 </div>
-                <div class="col-12">
+                <div class="col">
                     <button type="submit" class="btn btn-outline-primary">Abschicken</button>
                 </div>
               </form>
         </div> 
     </main>
+</body>
 </html>
