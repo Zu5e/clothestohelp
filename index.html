@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!--Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!--Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <title>ClothesToHelp</title>
     <link rel="icon" type="image/x-icon" href="/kleiderspende.png">
 </head>
@@ -28,17 +30,6 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Abgabe
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="erklärung.html">Erklärung</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="geschäftsstelle.html">Geschäftsstelle</a></li>
-                            <li><a class="dropdown-item" href="sammelfahrzeug.html">Sammelfahrzeug</a></li>
-                        </ul>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="anfahrt.html">Anfahrt</a>
@@ -89,13 +80,27 @@
             <form class="row justify-content-center" id="Spendenformular">
                 <h2>Spendenformular</h2>
                 <div class="col-3 mt-3">
-                    <select id="inputAbgabe" class="form-select" name="abgabe" aria-describedby="helpAbgabe" required="required">
-                      <option selected>...</option>
+                    <select id="inputAbgabe" class="form-select" name="abgabe" required="required">
+                      <option selected>Bitte auswählen...</option>
                       <option>Übergabe an der Geschäfftsstelle</option>
                       <option>Abholung mit dem Sammelfahrzeug</option>
                     </select>
-                    <div id="helpAbgabe" class="form-text">Bitte wähle zuerst wie du Spenden möchtest</div>
                 </div>
+
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                     $("#inputAbgabe").on('change',function(){
+                       var selectedBalue = $("#inputAbgabe").val();
+                       if (selectedBalue == "Abholung mit dem Sammelfahrzeug") 
+                       {
+                         $(".sammelfahrzeug").slideDown(400);
+                       }
+                       else{
+                         $(".sammelfahrzeug").slideUp(400);
+                       }
+                     }); 
+                    });
+                </script>
 
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 mb-3"></div>
@@ -109,69 +114,49 @@
 
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 mb-3"></div>
+                
+                <div class="w-100 sammelfahrzeug">
+                    <p class="text-danger">Bitte geben Sie eine Adresse innerhalb der Verbandsgemeinde Lambrecht an</p>
+                </div>
 
-                <div class="col-3">
+                <div class="col-3 sammelfahrzeug">
                     <input type="text" class="form-control" id="inputStraße" name="straße" placeholder="Straße" required="required">
                 </div>
-                <div class="col-3">
-                    <input type="number" min="1" max= "999" class="form-control" id="inputNr" name="hausnummer" placeholder="Hausnummer" required="required">
+                <div class="col-3 sammelfahrzeug">
+                    <input type="number" min="1" max="999" class="form-control" id="inputNr" name="hausnummer" placeholder="Hausnummer" required="required">
                 </div>
 
                 <!-- Force next columns to break to new line -->
-                <div class="w-100 mb-3"></div>
+                <div class="w-100 mb-3 sammelfahrzeug"></div>
 
-                <div class="col-3">
+                <div class="col-3 sammelfahrzeug">
                     <input type="text" class="form-control" id="inputStadt" name="stadt" placeholder="Stadt" required="required">
                 </div>
-                <div class="col-3">
-                    <input type="number" min="67466" max= "67475" class="form-control" id="inputPLZ" name="plz" placeholder="Postleitzahl" required="required">
+                <div class="col-3 sammelfahrzeug">
+                    <input type="number" min="67466" max="67475" class="form-control" id="inputPLZ" name="plz" placeholder="Postleitzahl" required="required">
                 </div>
 
                 <!-- Force next columns to break to new line -->
-                <div class="w-100 mb-3"></div>
+                <div class="w-100 mb-3 sammelfahrzeug"></div>
 
                 <div class="col-3">
                     <input type="text" class="form-control" id="inputKleidung" name="kleidung" placeholder="Art der Kleidung" required="required">
                 </div>
 
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 mb-3"></div>
-                    
-                <div class="col-3">
-                    <input type="email" class="form-control" id="inputEmail" name="e-amil" placeholder="E-Mail" required="required">
-                </div>
-
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 mb-3"></div>
-
                 <div class="col-3">
                     <select id="inputKriesengebiet" class="form-select" name="kriesengebiet" required="required">
-                      <option selected>...</option>
-                      <option>A</option>
-                      <option>B</option>
+                      <option selected>Ukraine</option>
+                      <option>Syrien</option>
+                      <option>Irak</option>
                     </select>
                 </div>
 
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 mb-3"></div>
 
-                <div class="col-4">
+                <div class="col-4 mb-3">
                     <button type="submit" class="btn btn-outline-dark">Jetzt spenden</button>
-                </div>
-
-                <script>$("inputAbgabe").change(function() {
-                    if ($(this).val() == "Abholung mit dem Sammelfahrzeug") {
-                      $('inputStraße').show();
-                      $('inputNr').show();
-                      $('inputStadt').show();
-                      $('inputPLZ').show();
-                    } else {
-                      $('inputStraße').hide();
-                      $('inputNr').hide();
-                      $('inputStadt').hide();
-                      $('inputPLZ').hide();
-                    }
-                  });</script>
+                </div> 
             </form>
         </div> 
     </main>
