@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!--Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!--Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>ClothesToHelp</title>
     <link rel="icon" type="image/x-icon" href="/kleiderspende.png">
 </head>
@@ -50,8 +52,8 @@
             </div>
         </nav>
     </header>
-    <main>
-        <div class="container-fluid text-center" style="background-color: gainsboro; padding-top: 10px;">
+    <main style="background-color: gainsboro;">
+        <div class="container-fluid text-center pt-3">
         <h1></h1>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
@@ -83,81 +85,93 @@
             </div>
         </div>
         </div>
-        <div class="container-fluid text-center" style="background-color: gainsboro; padding-top: 20px;">
-        <h2>Spendenformular</h2>
-        <p></p>
-            <form class="row justify-content-center">
-                <div class="col-3">
-                    <label for="inputVorname" class="form-label">Vorname</label>
-                    <input type="text" class="form-control" id="inputVorname">
-                </div>
-                <div class="col-3">
-                    <label for="inputNachname" class="form-label">Nachname</label>
-                    <input type="text" class="form-control" id="inputNachname">
-                </div>
-
-                <!-- Force next columns to break to new line -->
-                <div class="w-100"></div>
-
-                <div class="col-3">
-                    <label for="inputStraße" class="form-label">Straße</label>
-                    <input type="text" class="form-control" id="inputStraße">
-                </div>
-                <div class="col-3">
-                    <label for="inputNr" class="form-label">Nr.</label>
-                    <input type="text" class="form-control" id="inputNr">
+        <div class="container-fluid text-center mt-5">
+            <form class="row justify-content-center" id="Spendenformular">
+                <h2>Spendenformular</h2>
+                <div class="col-3 mt-3">
+                    <select id="inputAbgabe" class="form-select" name="abgabe" aria-describedby="helpAbgabe" required="required">
+                      <option selected>...</option>
+                      <option>Übergabe an der Geschäfftsstelle</option>
+                      <option>Abholung mit dem Sammelfahrzeug</option>
+                    </select>
+                    <div id="helpAbgabe" class="form-text">Bitte wähle zuerst wie du Spenden möchtest</div>
                 </div>
 
                 <!-- Force next columns to break to new line -->
-                <div class="w-100"></div>
+                <div class="w-100 mb-3"></div>
 
                 <div class="col-3">
-                    <label for="inputStadt" class="form-label">Stadt</label>
-                    <input type="text" class="form-control" id="inputStadt">
+                    <input type="text" class="form-control" id="inputVorname" name="vorname" placeholder="Vorname" required="required" >
                 </div>
                 <div class="col-3">
-                    <label for="inputPLZ" class="form-label">Postleitzahl</label>
-                    <input type="text" class="form-control" id="inputPLZ">
+                    <input type="text" class="form-control" id="inputNachname" name="nachname" placeholder="Nachname" required="required">
                 </div>
 
                 <!-- Force next columns to break to new line -->
-                <div class="w-100"></div>
+                <div class="w-100 mb-3"></div>
 
-                <div class="col-3" style="margin-top: 5px;">
-                    <label for="inputEmail" class="form-label">E-Mail</label>
-                    <input type="email" class="form-control" id="inputEmail">
+                <div class="col-3">
+                    <input type="text" class="form-control" id="inputStraße" name="straße" placeholder="Straße" required="required">
+                </div>
+                <div class="col-3">
+                    <input type="number" min="1" max= "999" class="form-control" id="inputNr" name="hausnummer" placeholder="Hausnummer" required="required">
                 </div>
 
                 <!-- Force next columns to break to new line -->
-                <div class="w-100"></div>
+                <div class="w-100 mb-3"></div>
 
                 <div class="col-3">
-                    <label for="inputKriesengebiet" class="form-label">Kriesengebiet</label>
-                    <select id="inputKriesengebiet" class="form-select">
-                      <option selected></option>
+                    <input type="text" class="form-control" id="inputStadt" name="stadt" placeholder="Stadt" required="required">
+                </div>
+                <div class="col-3">
+                    <input type="number" min="67466" max= "67475" class="form-control" id="inputPLZ" name="plz" placeholder="Postleitzahl" required="required">
+                </div>
+
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 mb-3"></div>
+
+                <div class="col-3">
+                    <input type="text" class="form-control" id="inputKleidung" name="kleidung" placeholder="Art der Kleidung" required="required">
+                </div>
+
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 mb-3"></div>
+                    
+                <div class="col-3">
+                    <input type="email" class="form-control" id="inputEmail" name="e-amil" placeholder="E-Mail" required="required">
+                </div>
+
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 mb-3"></div>
+
+                <div class="col-3">
+                    <select id="inputKriesengebiet" class="form-select" name="kriesengebiet" required="required">
+                      <option selected>...</option>
                       <option>A</option>
                       <option>B</option>
                     </select>
                 </div>
 
                 <!-- Force next columns to break to new line -->
-                <div class="w-100"></div>
+                <div class="w-100 mb-3"></div>
 
-                <div class="col-3">
-                    <label for="inputAbgabe" class="form-label">Abgabe</label>
-                    <select id="inputAbgabe" class="form-select">
-                      <option selected></option>
-                      <option>Geschäfftsstelle</option>
-                      <option>Sammelfahrzeug</option>
-                    </select>
+                <div class="col-4">
+                    <button type="submit" class="btn btn-outline-dark">Jetzt spenden</button>
                 </div>
 
-                <!-- Force next columns to break to new line -->
-                <div class="w-100"></div>
-
-                <div class="col-4" style="margin-top: 15px;">
-                    <button type="submit" class="btn btn-outline-dark">Abschicken</button>
-                </div>
+                <script>$("inputAbgabe").change(function() {
+                    if ($(this).val() == "Abholung mit dem Sammelfahrzeug") {
+                      $('inputStraße').show();
+                      $('inputNr').show();
+                      $('inputStadt').show();
+                      $('inputPLZ').show();
+                    } else {
+                      $('inputStraße').hide();
+                      $('inputNr').hide();
+                      $('inputStadt').hide();
+                      $('inputPLZ').hide();
+                    }
+                  });</script>
             </form>
         </div> 
     </main>
