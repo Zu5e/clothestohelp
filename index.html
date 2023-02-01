@@ -8,8 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!--Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <!--Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!--Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <title>ClothesToHelp</title>
@@ -32,10 +30,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Spende</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Anfahrt</a>
+                        <a class="nav-link active" aria-current="page" href="#Spendenformular">Spende</a>
                     </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -47,7 +42,7 @@
         </nav>
     </header>
     <main style="background-color: gainsboro;">
-        <div class="container-fluid text-center pt-3">
+        <div class="container-fluid text-center pt-4 px-4">
         <h1></h1>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
@@ -161,10 +156,78 @@
                 <!-- Force next columns to break to new line -->
                 <div class="w-100"></div>
 
-                <div class="mb-3">
+                <div class="mb-3" onsubmit="openModal()" id="Spendenformular" >
                     <button type="submit" class="btn btn-outline-dark">Jetzt spenden</button>
                 </div> 
-                
+
+                <script type="text/javascript">
+                    $('#Spendenformular').on('submit', function(e){
+                      $('#myConfirm').modal('show');
+                      e.preventDefault();
+                    });
+                </script>
+
+                <div class="modal fade" tabindex="-1" role="dialog" id="myConfirm">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title text-center">Bestätigung Ihrer Daten</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row row-cols-2">
+                            <div class="entryname col-xs-3">Vorname:</div>
+                            <div class="entrydata col-xs-9" id="showVorname"></div>
+                            </div>
+                            <div class="row row-cols-2">
+                            <div class="entryname col-xs-3">Nachname:</div>
+                            <div class="entrydata col-xs-9" id="showNachname"></div>
+                            </div>
+                            <div class="row row-cols-2">
+                            <div class="entryname col-xs-3">Straße:</div>
+                            <div class="entrydata col-xs-9" id="showStraße"></div>
+                            </div>
+                            <div class="row row-cols-2">
+                            <div class="entryname col-xs-3">Hausnummer:</div>
+                            <div class="entrydata col-xs-9" id="showNr"></div>
+                            </div>
+                            <div class="row row-cols-2">
+                            <div class="entryname col-xs-3">Stadt:</div>
+                            <div class="entrydata col-xs-9" id="showStadt"></div>
+                            </div>
+                            <div class="row row-cols-2">
+                            <div class="entryname col-xs-3">Postleitzahl:</div>
+                            <div class="entrydata col-xs-9" id="showPLZ"></div>
+                            </div>
+                            <div class="row row-cols-2">
+                            <div class="entryname col-xs-3">Art der Kleidung:</div>
+                            <div class="entrydata col-xs-9" id="showKleidung"></div>
+                            </div>
+                            <div class="row row-cols-2">
+                            <div class="entryname col-xs-3">Ausgewähltes Kriesengebiet:</div>
+                            <div class="entrydata col-xs-9" id="showKriesengebiet"></div>
+                            </div>
+                        </div>
+                            <div class="modal-footer">
+                            <p>Vielen für Ihre Spende</p>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Schließen</button>
+                            </div>
+                      </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    $('#Spendenformular').on('submit', function () {
+                     $('#showVorname').html($('#inputVorname').val());
+                     $('#showNachname').html($('#inputNachname').val());
+                     $('#showStraße').html($('#inputStraße').val());
+                     $('#showNr').html($('#inputNr').val());
+                     $('#showStadt').html($('#inputStadt').val());
+                     $('#showPLZ').html($('#inputPLZ').val());
+                     $('#showKleidung').html($('#inputKleidung').val());
+                     $('#showKriesengebiet').html($('#inputKriesengebiet').val());
+                    }); 
+                </script>
+
                 <!-- Force next columns to break to new line -->
                 <div class="w-100"></div>
             
@@ -178,7 +241,7 @@
           
               <img class="justify-content-center" src="kleiderspende.png" width="30" height="30">
 
-              <ul class="nav col-md-4 justify-content-end">
+              <ul class="nav col-md-4 justify-content-end">  
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Impressum</a></li>
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Datenschutzerklärung</a></li>
               </ul>
