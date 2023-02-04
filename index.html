@@ -216,7 +216,7 @@
                 </div>
 
                 <script type="text/javascript">
-                    $('#Spendenformular').on('submit', function () {
+                    $('#Spendenformular').on('submit', function (e) {
                      $('#showVorname').html($('#inputVorname').val());
                      $('#showNachname').html($('#inputNachname').val());
                      $('#showStraße').html($('#inputStraße').val());
@@ -225,6 +225,7 @@
                      $('#showPLZ').html($('#inputPLZ').val());
                      $('#showKleidung').html($('#inputKleidung').val());
                      $('#showKriesengebiet').html($('#inputKriesengebiet').val());
+                     e.preventDefault();
                     }); 
                 </script>
 
