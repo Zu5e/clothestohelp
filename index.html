@@ -15,7 +15,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-xs navbar-expand-sm navbar-expand-md navbar-expand-lg navbar-expand-xl navbar-expand-xxl" style="background-color: rgb(179, 198, 255)">
+        <nav id="navbar_top" class="navbar navbar-expand-xs navbar-expand-sm navbar-expand-md navbar-expand-lg navbar-expand-xl navbar-expand-xxl" style="background-color: rgb(179, 198, 255)">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                 <img src="kleiderspende.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -40,6 +40,22 @@
                 </div>
             </div>
         </nav>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 0) {
+                    document.getElementById('navbar_top').classList.add('fixed-top');
+                    // add padding top to show content behind navbar
+                    navbar_height = document.querySelector('.navbar').offsetHeight;
+                    document.body.style.paddingTop = navbar_height + 'px';
+                } else {
+                    document.getElementById('navbar_top').classList.remove('fixed-top');
+                    // remove padding top from body
+                    document.body.style.paddingTop = '0';
+                } 
+            });
+            }); 
+        </script>
     </header>
     <main style="background-color: gainsboro;">
         <div class="container-fluid text-center pt-4 px-4">
@@ -203,7 +219,7 @@
                             <div class="entrydata col-xs-9" id="showKleidung"></div>
                             </div>
                             <div class="row row-cols-2">
-                            <div class="entryname col-xs-3">Ausgewähltes Kriesengebiet:</div>
+                            <div class="entryname col-xs-3">Kriesengebiet:</div>
                             <div class="entrydata col-xs-9" id="showKriesengebiet"></div>
                             </div>
                         </div>
@@ -216,7 +232,7 @@
                 </div>
 
                 <script type="text/javascript">
-                    $('#Spendenformular').on('submit', function (e) {
+                    $('#Spendenformular').on('submit', function () {
                      $('#showVorname').html($('#inputVorname').val());
                      $('#showNachname').html($('#inputNachname').val());
                      $('#showStraße').html($('#inputStraße').val());
@@ -225,15 +241,14 @@
                      $('#showPLZ').html($('#inputPLZ').val());
                      $('#showKleidung').html($('#inputKleidung').val());
                      $('#showKriesengebiet').html($('#inputKriesengebiet').val());
-                     e.preventDefault();
                     }); 
                 </script>
 
                 <!-- Force next columns to break to new line -->
                 <div class="w-100"></div>
-            
+                
             </form>
-        </div> 
+        </div>
     </main>
     <footer style="background-color: rgb(179, 198, 255)">
         <div class="container">
@@ -245,6 +260,7 @@
               <ul class="nav col-md-4 justify-content-end">  
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Impressum</a></li>
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Datenschutzerklärung</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Nach oben</a></li>
               </ul>
             </footer>
           </div>
