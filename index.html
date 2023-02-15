@@ -57,10 +57,9 @@
             }); 
         </script>
     </header>
-    <main style="background-color: gainsboro;">
+    <main style="background-color: rgb(220, 220, 220);">
         <div class="container-fluid text-center pt-4 px-4">
-        <h1></h1>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4 pt-4">
             <div class="col">
                 <div class="card h-100 border-dark">
                 <img src="kleider_img_3.jpg" class="card-img-top" alt="...">
@@ -74,8 +73,8 @@
                 <div class="card h-100 border-dark">
                 <img src="kleider_img_1.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                <h5 class="card-title">Übergabe an der Geschäftsstelle</h5>
-                <p class="card-text">Du kannst deine Spende während unseren Öffnungszeiten direkt in der Geschäfftsstelle abgeben. Wähle im Spendenformular als Abgabeort die Geschäfftsstelle aus.</p>
+                <h5 class="card-title">Übergabe in der Geschäftsstelle</h5>
+                <p class="card-text">Du kannst deine Spende während unseren Öffnungszeiten direkt in der Geschäftsstelle abgeben. Wähle im Spendenformular als Abgabeort die Geschäftsstelle aus.</p>
                 </div>
                 </div>
             </div>
@@ -99,17 +98,16 @@
 
                 <div class="my-3">
                     <select id="inputAbgabe" class="form-select" name="abgabe" required="required">
-                      <option selected>Bitte auswählen...</option>
-                      <option>Übergabe an der Geschäfftsstelle</option>
-                      <option>Abholung mit dem Sammelfahrzeug</option>
+                    <option selected>Abholung mit dem Sammelfahrzeug</option>
+                    <option>Übergabe in der Geschäfftsstelle</option>
                     </select>
                 </div>
 
                 <script type="text/javascript">
                     $(document).ready(function(){
                      $("#inputAbgabe").on('change',function(){
-                       var selectedBalue = $("#inputAbgabe").val();
-                       if (selectedBalue == "Abholung mit dem Sammelfahrzeug") 
+                       var selectedValue = $("#inputAbgabe").val();
+                       if (selectedValue == "Abholung mit dem Sammelfahrzeug") 
                        {
                          $(".sammelfahrzeug").slideDown(400);
                        }
@@ -124,10 +122,10 @@
                 <div class="w-100"></div>
 
                 <div class="mb-3">  
-                    <input type="text" class="form-control" id="inputVorname" name="vorname" placeholder="Vorname" required="required" >
+                    <input type="text" class="form-control" id="inputVorname" name="vorname" placeholder="Vorname">
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="inputNachname" name="nachname" placeholder="Nachname" required="required">
+                    <input type="text" class="form-control" id="inputNachname" name="nachname" placeholder="Nachname">
                 </div>
 
                 <!-- Force next columns to break to new line -->
@@ -138,32 +136,33 @@
                 </div>
 
                 <div class="sammelfahrzeug mb-3">
-                    <input type="text" class="form-control" id="inputStraße" name="straße" placeholder="Straße" required="required">
+                    <input type="text" class="form-control" id="inputStraße" name="straße" placeholder="Straße">
                 </div>
                 <div class="sammelfahrzeug mb-3">
-                    <input type="number" min="1" max="999" class="form-control" id="inputNr" name="hausnummer" placeholder="Hausnummer" required="required">
+                    <input type="number" min="1" max="999" class="form-control" id="inputNr" name="hausnummer" placeholder="Hausnummer">
                 </div>
 
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 sammelfahrzeug"></div>
 
                 <div class="sammelfahrzeug mb-3">
-                    <input type="text" class="form-control" id="inputStadt" name="stadt" placeholder="Stadt" required="required">
+                    <input type="text" class="form-control" id="inputStadt" name="stadt" placeholder="Stadt">
                 </div>
                 <div class="sammelfahrzeug mb-3">
-                    <input type="number" min="67466" max="67475" class="form-control" id="inputPLZ" name="plz" placeholder="Postleitzahl" required="required">
+                    <input type="number" min="67466" max="67475" class="form-control" id="inputPLZ" name="plz" placeholder="Postleitzahl">
                 </div>
 
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 sammelfahrzeug"></div>
 
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="inputKleidung" name="kleidung" placeholder="Art der Kleidung" required="required">
+                    <input type="text" class="form-control" id="inputKleidung" name="kleidung" placeholder="Art der Kleidung">
                 </div>
 
                 <div class="mb-3">
-                    <select id="inputKriesengebiet" class="form-select" name="kriesengebiet" required="required">
-                      <option selected>Ukraine</option>
+                    <select id="inputKriesengebiet" class="form-select" name="kriesengebiet">
+                      <option selected>Bitte auswählen...</option>
+                      <option>Ukraine</option>
                       <option>Syrien</option>
                       <option>Irak</option>
                     </select>
@@ -224,8 +223,8 @@
                             </div>
                         </div>
                             <div class="modal-footer">
-                            <p>Vielen für Ihre Spende</p>
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Schließen</button>
+                            <p>Vielen Dank für Ihre Spende</p>
+                            <button type="button" class="btn btn-primary" onClick="document.location.reload(true)" data-bs-dismiss="modal">Schließen</button>
                             </div>
                       </div>
                     </div>
