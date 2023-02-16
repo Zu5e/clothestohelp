@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Bootstrap CSS -->
+    <!--Bootstrap CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <!--Bootstrap JavaScript -->
+    <!--Bootstrap JavaScript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <!--Jquery -->
+    <!--Jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <title>ClothesToHelp</title>
     <link rel="icon" type="image/x-icon" href="/kleiderspende.png">
 </head>
 <body>
+    <!--Beginn Header-->
     <header>
+        <!--Navbar-->
         <nav id="navbar_top" class="navbar navbar-expand-xs navbar-expand-sm navbar-expand-md navbar-expand-lg navbar-expand-xl navbar-expand-xxl" style="background-color: rgb(179, 198, 255)">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
@@ -40,6 +42,7 @@
                 </div>
             </div>
         </nav>
+        <!--Fixierte Navbar-->
         <script>
             document.addEventListener("DOMContentLoaded", function(){
             window.addEventListener('scroll', function() {
@@ -57,7 +60,9 @@
             }); 
         </script>
     </header>
+    <!--Beginn Main-->
     <main style="background-color: rgb(220, 220, 220);">
+        <!--Infoboxen-->
         <div class="container-fluid text-center pt-4 px-4">
         <div class="row row-cols-1 row-cols-md-3 g-4 pt-4">
             <div class="col">
@@ -89,11 +94,12 @@
             </div>
         </div>
         </div>
+        <!--Spendenformular-->
         <div class="container-fluid text-center mt-5">
             <form class="row row-cols-2 row-cols-md-3 justify-content-center" id="Spendenformular">
                 <h2>Spendenformular</h2>
 
-                <!-- Force next columns to break to new line -->
+                <!-- Force next columns to break to new line-->
                 <div class="w-100"></div>
 
                 <div class="my-3">
@@ -103,6 +109,7 @@
                     </select>
                 </div>
 
+                <!--Script für Abgabeoptionen-->
                 <script type="text/javascript">
                     $(document).ready(function(){
                      $("#inputAbgabe").on('change',function(){
@@ -118,7 +125,7 @@
                     });
                 </script>
 
-                <!-- Force next columns to break to new line -->
+                <!--Force next columns to break to new line-->
                 <div class="w-100"></div>
 
                 <div class="mb-3">  
@@ -128,7 +135,7 @@
                     <input type="text" class="form-control" id="inputNachname" name="nachname" placeholder="Nachname">
                 </div>
 
-                <!-- Force next columns to break to new line -->
+                <!--Force next columns to break to new line-->
                 <div class="w-100"></div>
                 
                 <div class="w-100 sammelfahrzeug">
@@ -142,7 +149,7 @@
                     <input type="number" min="1" max="999" class="form-control" id="inputNr" name="hausnummer" placeholder="Hausnummer">
                 </div>
 
-                <!-- Force next columns to break to new line -->
+                <!--Force next columns to break to new line-->
                 <div class="w-100 sammelfahrzeug"></div>
 
                 <div class="sammelfahrzeug mb-3">
@@ -152,7 +159,7 @@
                     <input type="number" min="67466" max="67475" class="form-control" id="inputPLZ" name="plz" placeholder="Postleitzahl">
                 </div>
 
-                <!-- Force next columns to break to new line -->
+                <!--Force next columns to break to new line-->
                 <div class="w-100 sammelfahrzeug"></div>
 
                 <div class="mb-3">
@@ -168,13 +175,14 @@
                     </select>
                 </div>
 
-                <!-- Force next columns to break to new line -->
+                <!--Force next columns to break to new line-->
                 <div class="w-100"></div>
 
                 <div class="mb-3" onsubmit="openModal()" id="Spendenformular" >
                     <button type="submit" class="btn btn-outline-dark">Jetzt spenden</button>
                 </div> 
-
+                
+                <!--Script für die Anzeige der Zusammenfassung nach absenden des Spendenformulars-->
                 <script type="text/javascript">
                     $('#Spendenformular').on('submit', function(e){
                       $('#myConfirm').modal('show');
@@ -182,6 +190,7 @@
                     });
                 </script>
 
+                <!--Zusammenfassung-->
                 <div class="modal fade" tabindex="-1" role="dialog" id="myConfirm">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
@@ -230,7 +239,8 @@
                       </div>
                     </div>
                 </div>
-
+                
+                <!--Script für die Verbindung der Daten des Spendenformular mit der Ausgabe in der Zusammenfassung-->
                 <script type="text/javascript">
                     $('#Spendenformular').on('submit', function () {
                      $('#showVorname').html($('#inputVorname').val());
@@ -244,12 +254,13 @@
                     }); 
                 </script>
 
-                <!-- Force next columns to break to new line -->
+                <!--Force next columns to break to new line-->
                 <div class="w-100"></div>
                 
             </form>
         </div>
     </main>
+    <!--Beginn Footer-->
     <footer style="background-color: rgb(179, 198, 255)">
         <div class="container">
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-4">
